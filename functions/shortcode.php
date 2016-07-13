@@ -12,8 +12,8 @@ function hcrm_remindme_func(){
 	return '
 	<div id="hcrmform">
 		<form accept-charset="utf-8">
-			<input placeholder="Your Email" class="col l6 m6 s12 left" type="text" name="email" id="hcrmemail"/>
-			<input class="btn col l5 offset-l1 m5 offset-m1 s12 left" type="submit" name="submit" id="hcrmsubmit" value="Get PDF" />
+			<input placeholder="Your Email" class="col l12 m12 s12 left" type="text" name="email" id="hcrmemail"/>
+			<input class="btn col l6 offset-l3 m8 offset-m2 s12 left" type="submit" name="submit" id="hcrmsubmit" value="Get PDF" />
 			<input id="hcrmchecker" type="hidden" name="checker" value="' . $hcrm_form_token . '" hidden>
 		</form>
 	</div>
