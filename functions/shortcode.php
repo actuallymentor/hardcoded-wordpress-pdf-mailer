@@ -1,16 +1,23 @@
 <?php
 function hcrm_remindme_func(){
 
-
-	//Form spam control and debug declaration
+	// Spam security
 	if(!session_id()) {
 		session_start();
 	}
-	$wprm_form_token = md5(uniqid('auth', true));
-	$_SESSION['wprm_form_token'] = $wprm_form_token;
+	$hcrm_form_token = md5(uniqid('auth', true));
+	$_SESSION['hcrm_form_token'] = $hcrm_form_token;
 
-	$wprm_return = 	'the form html';
-	return $wprm_return;
+	//Include vars
+	return '
+	<div id="hcrmform">
+		<form accept-charset="utf-8">
+			<input placeholder="Your Email" class="col l6 m6 s12 left" type="text" name="email" id="hcrmemail"/>
+			<input class="btn col l5 offset-l1 m5 offset-m1 s12 left" type="submit" name="submit" id="hcrmsubmit" value="Get PDF" />
+			<input id="hcrmchecker" type="hidden" name="checker" value="' . $hcrm_form_token . '" hidden>
+		</form>
+	</div>
+	';
 
 }
 

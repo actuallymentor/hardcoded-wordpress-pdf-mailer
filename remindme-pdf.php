@@ -14,10 +14,11 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 include( __DIR__ . '/functions/shortcode.php');
 
-if( $_GET['hcrm_sub'] ) {
-	include( __DIR__ . '/functions/actor.php');
-}
+wp_enqueue_script( 'hcrm-js', plugin_dir_url( __FILE__ ) . '/functions/actor.js', ['jquery'], '1.0.0', true );
 
+if ( isset( $_GET['pdf'] ) ) {
+	wp_enqueue_script( 'hcrm-pdf-js', plugin_dir_url( __FILE__ ) . '/functions/download-pdf.js', ['jquery'], '1.0.0', true );
+}
 
 
 ?>
